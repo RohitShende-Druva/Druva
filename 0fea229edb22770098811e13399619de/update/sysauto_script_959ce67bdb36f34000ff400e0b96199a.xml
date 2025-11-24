@@ -185,21 +185,6 @@ try{
 	}
 	configurationRecord['pageToken'] = null;
 
-	// TESTING: Set maxGeneratedOn to 20 days before current time and minGeneratedOn to 1 day before maxGeneratedOn
-	var currentDate = new GlideDateTime();
-	var maxGeneratedOnDate = new GlideDateTime(currentDate);
-	maxGeneratedOnDate.addDaysUTC(-20); // Subtract 20 days
-	configurationRecord.maxGeneratedOn = new Date(maxGeneratedOnDate.getNumericValue()).toISOString();
-	
-	var minGeneratedOnDate = new GlideDateTime(maxGeneratedOnDate);
-	minGeneratedOnDate.addDaysUTC(-1); // Subtract 1 day from maxGeneratedOn (so 21 days before current time)
-	configurationRecord.minGeneratedOn = new Date(minGeneratedOnDate.getNumericValue()).toISOString();
-	
-	gs.info("TESTING MODE: maxGeneratedOn set to 20 days before current time");
-	gs.info("TESTING MODE: minGeneratedOn set to 1 day before maxGeneratedOn (21 days before current time)");
-	gs.info("TESTING - maxGeneratedOn: " + configurationRecord.maxGeneratedOn);
-	gs.info("TESTING - minGeneratedOn: " + configurationRecord.minGeneratedOn);
-	
     // getting access token
 	var access_token= new x_druva_druva.DruvaEngine().authenticateClient();
 	do {
@@ -226,14 +211,14 @@ catch(ex){
         <sys_created_by>drvconnector</sys_created_by>
         <sys_created_on>2019-07-29 11:55:04</sys_created_on>
         <sys_id>959ce67bdb36f34000ff400e0b96199a</sys_id>
-        <sys_mod_count>404</sys_mod_count>
+        <sys_mod_count>405</sys_mod_count>
         <sys_name>FetchAlerts</sys_name>
         <sys_package display_value="Druva" source="x_druva_druva">0fea229edb22770098811e13399619de</sys_package>
         <sys_policy/>
         <sys_scope display_value="Druva">0fea229edb22770098811e13399619de</sys_scope>
         <sys_update_name>sysauto_script_959ce67bdb36f34000ff400e0b96199a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-22 16:16:09</sys_updated_on>
+        <sys_updated_on>2025-11-24 06:10:51</sys_updated_on>
         <time_zone/>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
